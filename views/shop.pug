@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title #{docTitle}
+    link(rel="stylesheet", href="/css/main.css")  
+    link(rel="stylesheet", href="/css/product.css")  
+  body
+    header.main-header
+      nav.main-header__nav
+        ul.main-header__item-list
+          li.main-header__item
+            a.active(href="/") Shop
+          li.main-header__item
+            a(href="/") Add Product
+    main
+      .grid
+        article.card.product-item
+          header.card__header
+            h1.product__title Great Book
+          div.card__image
+            img(src="https://cdn.pixabay.com/photo/2016/09/10/17/18/book-1659717_960_720.jpg", alt="A Book")
+          div.card__content
+            h2.product__price $19.99
+            p.product__discription A Shelf of Books
