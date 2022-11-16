@@ -12,14 +12,17 @@ html(lang="en")
           li.main-header__item
             a.active(href="/") Shop
           li.main-header__item
-            a(href="/") Add Product
+            a(href="/admin/add-product") Add Product
     main
       .grid
-        article.card.product-item
-          header.card__header
-            h1.product__title Great Book
-          div.card__image
-            img(src="https://cdn.pixabay.com/photo/2016/09/10/17/18/book-1659717_960_720.jpg", alt="A Book")
-          div.card__content
-            h2.product__price $19.99
-            p.product__discription A Shelf of Books
+        each product in prods
+          article.card.product-item
+            header.card__header
+              h1.product__title #{product.title}
+            div.card__image
+              img(src="https://rukminim1.flixcart.com/image/416/416/k1mgu4w0/book/6/4/9/20th-century-boys-the-perfect-edition-vol-4-original-imafh4y9whm8fmyt.jpeg?q=70", alt="A Book")
+            div.card__content
+              h2.product__price $19.99
+              p.product__discription A Shelf of Books
+            div.card__actions
+              button.btn Add to Cart
