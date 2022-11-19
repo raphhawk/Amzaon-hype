@@ -11,7 +11,7 @@ router.get("/", (req, res, next)=>{
   console.log("executiing middleware at /");
   //res.sendFile(path.join(rootDir, "views", "shop.html"));
   const products = adminData.products;
-  res.render("shop", {prods: products, pageTitle: "Shop"});
+  res.render("shop", {prods: products, pageTitle: "Shop", hasProducts: products.length > 0});
 });
 
 
