@@ -1,3 +1,3 @@
 # Amzaon-hype
 
-## An E-commerce Site model built with MVC 
+## An E-commerce Site project using MVC and stateless architecture 
