@@ -1,19 +1,11 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    title #{docTitle}
-    link(rel="stylesheet", href="/css/main.css")  
-    link(rel="stylesheet", href="/css/product.css")  
-  body
-    header.main-header
-      nav.main-header__nav
-        ul.main-header__item-list
-          li.main-header__item
-            a.active(href="/") Shop
-          li.main-header__item
-            a(href="/admin/add-product") Add Product
-    main
+extends layouts/main-layout.pug
+
+block styles
+  link(rel="stylesheet", href="/css/product.css")  
+
+block content
+   main
+    if prods.length > 0
       .grid
         each product in prods
           article.card.product-item
@@ -26,3 +18,7 @@ html(lang="en")
               p.product__discription A Shelf of Books
             div.card__actions
               button.btn Add to Cart
+    else
+        h1 No Products Available
+
+
