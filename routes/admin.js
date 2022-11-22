@@ -12,7 +12,13 @@ const products = [];
 router.get("/add-product", (req, res, next)=>{
   console.log("executiing middleware at /add-product");
   //res.sendFile(path.join(rootDir, "views", "add-product.html"));
-  res.render("add-product", {pageTitle: "Add Product", path: "/admin/add-product"});
+  res.render("add-product", {
+    pageTitle: "Add Product", 
+    path: "/admin/add-product", 
+    productCSS: true,
+    formsCSS: true, 
+    activeProduct: true
+  });
 });
 
 // /admin/add-product => POST

@@ -5,13 +5,12 @@ const adminData   =  require("./routes/admin");
 const shopRoutes  =  require("./routes/shop");
 const expressHbs  =  require("express-handlebars");
 
-
 const app = express();
 
 app.engine("hbs", expressHbs({
-  //defaultLayout: "main",
-  //extname: ".hbs",
-  layoutsDir: path.join(__dirname, "/views")
+  defaultLayout: "main-layout",
+  extname: ".hbs",
+  layoutsDir: path.join(__dirname, "/views/layouts")
 }));
 app.set("view engine", "hbs");
 app.set("views", "views");
