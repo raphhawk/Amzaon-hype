@@ -6,7 +6,7 @@ const Product = require("../models/product");
 exports.getAddProduct = (req, res, next)=>{
   console.log("executiing middleware at /add-product");
   //res.sendFile(path.join(rootDir, "views", "add-product.html"));
-  res.render("add-product", {
+  res.render("admin/add-product", {
     pageTitle: "Add Product", 
     path: "/admin/add-product", 
     productCSS: true,
@@ -22,15 +22,16 @@ exports.postAddProduct = (req, res, next)=>{
   res.redirect("/");
 }
 
+
 exports.getProducts = (req, res, next)=>{
   console.log("executiing middleware at /");
   Product.fetchAll(products=>{
-    res.render("shop", {
+    res.render("shop/product-list", {
       prods: products, 
       path: "/",
       pageTitle: "Shop", 
-      hasProducts: products.length > 0,
-      activeShop: true,
+      //hasProducts: products.length > 0,
+      //activeShop: true,
       productCSS: true
     });
   });
